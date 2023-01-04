@@ -4,23 +4,40 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import "./CardItem.css";
 
 export default function CardItem({ productDetails }) {
   const { id, title, category, price, img, desc } = productDetails;
+
+  function onClickHandler() {
+    console.log("dd");
+  }
+
   return (
     <>
-      <Card sx={{ maxWidth: "80%", margin: "20px auto" }}>
-        <CardMedia sx={{ height: 140 }} image={img} title="green iguana" />
+      <Card className="CardItem">
+        <CardMedia image={img} title={title} className="pictire-container" />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            className="card-item-name"
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            className="card-item-description"
+            variant="body2"
+            color="text.secondary"
+          >
             {desc}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Add To Card</Button>
+          <Button onClick={onClickHandler} size="small">
+            Add To Card
+          </Button>
         </CardActions>
       </Card>
     </>

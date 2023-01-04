@@ -1,0 +1,19 @@
+.CardItem {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 900px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+.CardItem .pictire-container {
+  height: 150px;
+  width: 150px;
+}
+
+.card-item-name,
+.card-item-description {
+  width: 500px;
+}
