@@ -1,7 +1,8 @@
-const data = [
+export const data = [
   {
     id: 1,
     title: "buttermilk pancakes",
+    clicked: false,
     category: "breakfast",
     price: 15.99,
     img: "./images/item-1.jpeg",
@@ -10,6 +11,7 @@ const data = [
   {
     id: 2,
     title: "diner double",
+    clicked: false,
     category: "lunch",
     price: 13.99,
     img: "./images/item-2.jpeg",
@@ -18,6 +20,7 @@ const data = [
   {
     id: 3,
     title: "godzilla milkshake",
+    clicked: false,
     category: "shakes",
     price: 6.99,
     img: "./images/item-3.jpeg",
@@ -26,6 +29,7 @@ const data = [
   {
     id: 4,
     title: "country delight",
+    clicked: false,
     category: "breakfast",
     price: 20.99,
     img: "./images/item-4.jpeg",
@@ -34,6 +38,7 @@ const data = [
   {
     id: 5,
     title: "egg attack",
+    clicked: false,
     category: "lunch",
     price: 22.99,
     img: "./images/item-5.jpeg",
@@ -42,6 +47,7 @@ const data = [
   {
     id: 6,
     title: "oreo dream",
+    clicked: false,
     category: "shakes",
     price: 18.99,
     img: "./images/item-6.jpeg",
@@ -50,6 +56,7 @@ const data = [
   {
     id: 7,
     title: "bacon overflow",
+    clicked: false,
     category: "breakfast",
     price: 8.99,
     img: "./images/item-7.jpeg",
@@ -58,6 +65,7 @@ const data = [
   {
     id: 8,
     title: "american classic",
+    clicked: false,
     category: "lunch",
     price: 12.99,
     img: "./images/item-8.jpeg",
@@ -66,11 +74,19 @@ const data = [
   {
     id: 9,
     title: "quarantine buddy",
+    clicked: false,
     category: "shakes",
     price: 16.99,
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
-];
-
-export { data };
+  {
+    id: 10,
+    title: "Bison Steak",
+    clicked: false,
+    category: "dinner",
+    price: 22.99,
+    img: "./images/item-10.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
+]
