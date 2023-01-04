@@ -40,7 +40,7 @@ export default function LoginComponent(props) {
           <input type="text" name="login" value={inputValues.typedLogin} />
           <label>Password</label>
           <input
-            type="password "
+            type="password"
             name="password"
             value={inputValues.typedPassword}
           />
