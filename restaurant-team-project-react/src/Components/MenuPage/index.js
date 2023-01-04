@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
+import CardItem from '../CardItem';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -15,7 +16,12 @@ const Img = styled('img')({
 function MenuPage({menu}) {
   return (
     <>
-    {menu.map(ele=>
+    {menu.map(productDetails=><CardItem productDetails={productDetails} key={productDetails.id} />)}
+
+
+
+
+    {/* {menu.map(ele=>
         <Paper
         sx={{
           p: 2,
@@ -55,7 +61,9 @@ function MenuPage({menu}) {
             </Grid>
           </Grid>
         </Grid>
-      </Paper>)}
+      </Paper>)} */}
+
+
     </>
   )
 }

@@ -9,10 +9,10 @@ export default function CustomersAccess({ menu, setAccess}) {
   // const [login, setLogin] = useState()
   // props.onAccessChange;
   // navbar (sidebar)|| header
-  // component for home
-  // component menu 
-  // component about us (visit us)
-  // component addToCart
+  // conditional component for home 
+  // conditional component menu 
+  // conditional component about us (visit us)
+  // component Cart
   // footer  
 
 
