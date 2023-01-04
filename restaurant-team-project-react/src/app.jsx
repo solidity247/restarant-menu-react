@@ -1,15 +1,14 @@
 import { useState } from "preact/hooks";
 import "./app.css";
-import { menu } from "./assets/menu";
+import { data } from "./assets/data";
 import AdminAccess from "./Components/AdminAccess";
 import CustomersAccess from "./Components/CustomersAccess";
 
-const initialData = menu;
 
 export function App() {
-  const [data, setData] = useState(initialData);
+  const [menu, setMenu] = useState([...data]);
   const [access, setAccess] = useState("customer");
-
+  console.log(data)
   function logOutAdmin() {
     setAccess("customer");
   }
@@ -18,15 +17,15 @@ export function App() {
     <>
       {access === "admin" && (
         <AdminAccess
-          onDataUpdate={setData}
+          onDataUpdate={setMenu}
           onAccessChange={logOutAdmin}
         ></AdminAccess>
       )}
       {access === "customer" && (
         <CustomersAccess
-          data={data}
-          onAccessChange={setAccess}
-        ></CustomersAccess>
+          menu={menu}
+          setAccess={setAccess}
+        />
       )}
     </>
   );
