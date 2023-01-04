@@ -1,4 +1,4 @@
-const menu = [
+const data = [
   {
     id: 1,
     title: "buttermilk pancakes",
@@ -73,4 +73,4 @@ const menu = [
   },
 ];
 
-export { menu };
+export { data };
