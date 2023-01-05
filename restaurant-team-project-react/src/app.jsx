@@ -7,7 +7,6 @@ import CustomersAccess from "./Components/CustomersAccess";
 export function App() {
   const [menu, setMenu] = useState([...data]);
   const [access, setAccess] = useState("customer");
-  // console.log(data);
   const [test, setTest] = useState("");
   console.log(test);
   function logOutAdmin() {
@@ -25,15 +24,14 @@ export function App() {
 
   return (
     <>
-      {access === "admin" && (
+      {access === "admin" ? 
         <AdminAccess
           onDataUpdate={setMenu}
           onAccessChange={logOutAdmin}
-        ></AdminAccess>
-      )}
-      {access === "customer" && (
-        <CustomersAccess menu={menu} setAccess={setAccess} />
-      )}
+        />
+      :
+        <CustomersAccess menu={menu} setMenu = {setMenu} setAccess={setAccess} />
+      }
     </>
   );
 }

@@ -4,7 +4,7 @@ import MenuPage from "./MenuPage"
 
 
 
-export default function CustomersAccess({ menu, setAccess}) {
+export default function CustomersAccess({ menu, setMenu, setAccess}) {
   // TODOS:
   // const [login, setLogin] = useState()
   // props.onAccessChange;
@@ -26,7 +26,7 @@ export default function CustomersAccess({ menu, setAccess}) {
       Here customer can see menu, sort, filter, add to cart and see other
       information about our cafe
       <br />
-      <MenuPage menu = {menu}/>
+      <MenuPage menu = {menu} setMenu={setMenu}/>
       <br />
       And much more from customer's site
       <br />
