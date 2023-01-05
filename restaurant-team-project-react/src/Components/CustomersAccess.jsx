@@ -5,6 +5,7 @@ import HomePage from "./HomePage";
 import MenuPage from "./MenuPage"
 import VisitPage from "./VisitPage";
 import "./CustomersAccess.css"
+import CartPage from "./CartPage";
 
 
 
@@ -19,31 +20,37 @@ export default function CustomersAccess({ menu, setMenu, setAccess}) {
   // conditional component about us (visit us)
   // component Cart
   // footer  
+  const [cartItems, setCartItems] = useState([])
   const [activeTab, setActiveTab] = useState(0)
   const headerTabs = [
     {
       label : "HOME",
-      id: "1"
+      id: 1
     },
     {
       label : "MENU",
-      id: "2"
+      id: 2
     },
     {
       label : "VISIT US",
-      id: "3"
+      id: 3
+    },
+    {
+      label: "Cart",
+      id: 4
     }
 
   ]
-  console.log(activeTab)
+  console.log(cartItems)
 
 
   return (
     <div className="customer-page-container">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} headerTabs={headerTabs}/>
       {activeTab === 0 && <HomePage/>}
-      {activeTab === 1 && <MenuPage menu = {menu} setMenu={setMenu}/>}
+      {activeTab === 1 && <MenuPage menu = {menu} setMenu={setMenu} cartItems={cartItems}/>}
       {activeTab === 2 && <VisitPage/>}
+      {activeTab === 3 && <CartPage cartItems={cartItems}/>}
       
       <br />
       And much more from customer's site
