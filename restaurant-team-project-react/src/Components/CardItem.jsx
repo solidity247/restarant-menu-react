@@ -6,11 +6,11 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./CardItem.css";
 
-export default function CardItem({ productDetails }) {
+export default function CardItem({ menu, productDetails, cartItems, index }) {
   const { id, title, category, price, img, desc } = productDetails;
 
-  function onClickHandler() {
-    console.log("dd");
+  function onClickHandler(i) {
+    cartItems.push(menu[i])
   }
 
   return (
@@ -35,7 +35,7 @@ export default function CardItem({ productDetails }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button onClick={onClickHandler} size="small">
+          <Button onClick={()=>onClickHandler(index)} size="small">
             Add To Card
           </Button>
         </CardActions>

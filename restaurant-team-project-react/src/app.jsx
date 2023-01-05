@@ -8,7 +8,7 @@ export function App() {
   const [menu, setMenu] = useState([...data]);
   const [access, setAccess] = useState("customer");
   const [test, setTest] = useState("");
-  console.log(test);
+  // console.log(test);
   function logOutAdmin() {
     setAccess("customer");
   }
@@ -30,7 +30,10 @@ export function App() {
           onAccessChange={logOutAdmin}
         />
       :
-        <CustomersAccess menu={menu} setMenu = {setMenu} setAccess={setAccess} />
+        <CustomersAccess 
+        menu={menu} 
+        setMenu = {setMenu} 
+        setAccess={setAccess} />
       }
     </>
   );

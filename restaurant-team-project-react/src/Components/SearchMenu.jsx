@@ -1,27 +1,51 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { useEffect, useState } from 'preact/hooks';
+import { data } from '../assets/data';
+import { Paper } from '@mui/material';
 
 function SearchMenu({menu, setMenu}) {
+  const [autocompleteVal, setAutocompleteVal] = useState("")
+  const [inputVal, setInputVal] = useState("")
+  
+  function filterByTitle(value){
+    const copyMenu = [...data]
+    if(value){
+      const filteredMenu = copyMenu.filter(item=>item.title.toLowerCase().includes(value.toLowerCase()))
+      setMenu(filteredMenu)
+    }else{
+      setMenu(data)
+    }
+  }
+
+  useEffect(()=>{
+    filterByTitle(autocompleteVal)
+  },[autocompleteVal])
+  
+  useEffect(()=>{
+    filterByTitle(inputVal)
+  },[inputVal])
+
   return (
-    <Autocomplete
-      id="country-select-demo"
-      sx={{ width: 300 }}
-      options={menu}
-      autoHighlight
-      getOptionLabel={(option) => option.title}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          label="search..."
-          inputProps={{
-            ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
+    <Paper 
+      >
+      <Autocomplete
+        onSelect={(event) => {
+          console.log(event.target.value)
+          setAutocompleteVal(event.target.value);
+        }}
+        id="combo-box-demo"
+        options={data}
+        getOptionLabel={option => option.title}
+        sx={{ width: 300 }}
+        renderInput={(params) => <TextField 
+          onChange={(event) => {
+            setInputVal(event.target.value);
           }}
-        />
-      )}
-    />
+          {...params} label="Search" />}
+      />
+    </Paper>
   )
 }
 
