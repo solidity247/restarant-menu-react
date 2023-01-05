@@ -1,21 +1,26 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import ButtonBase from "@mui/material/ButtonBase";
+import CardItem from "../CardItem";
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
+const Img = styled("img")({
+  margin: "auto",
+  display: "block",
+  maxWidth: "100%",
+  maxHeight: "100%",
 });
 
-function MenuPage({menu}) {
+function MenuPage({ menu }) {
   return (
     <>
-    {menu.map(ele=>
+      {menu.map((productDetails) => (
+        <CardItem productDetails={productDetails} key={productDetails.id} />
+      ))}
+
+      {/* {menu.map(ele=>
         <Paper
         sx={{
           p: 2,
@@ -55,9 +60,9 @@ function MenuPage({menu}) {
             </Grid>
           </Grid>
         </Grid>
-      </Paper>)}
+      </Paper>)} */}
     </>
-  )
+  );
 }
 
-export default MenuPage
+export default MenuPage;
