@@ -1,14 +1,41 @@
-.remove-btn-cartpage{
-    border:1px solid pink;
-    margin-left:2rem;
+.cart-btn-wrapper{
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
+.quantity-btns-wrapper{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.remove-btn-cartpage{
+    border:1px solid pink;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
 .quantity-btns-cartpage{
-   font-size: large;
+    width: 80%;
    font-weight: 400;
+   background-color: transparent;
+   border: 1px solid grey;
+   border-radius: 5px;
+   padding: 3px 3px;
+   cursor: pointer;
 }
 .quantity-num-cartpage{
     font-weight: bold;
-    font-size: large;
+    font-size: larger;
     text-align: center;
+    padding: 3px 6px;
+}
+.cart-btn-wrapper button{
+    font-weight: bold;
+}
+.cart-btn-wrapper button:hover{
+    background-color:aliceblue;
+
 }

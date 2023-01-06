@@ -31,7 +31,15 @@ export default function CustomersAccess({ menu, setMenu, setAccess}) {
 
   const [cartItems, setCartItems] = useState([])
   const [activeTab, setActiveTab] = useState(0)
-
+  useEffect(()=>{
+    const fromStorage = JSON.parse(localStorage.getItem("cart"))
+    if(fromStorage.length){
+      setCartItems(fromStorage)
+    }
+  },[])
+  useEffect(()=>{
+    localStorage.setItem("cart", JSON.stringify(cartItems))
+  },[cartItems.length])
   return (
     <div className="customer-page-container">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} headerTabs={headerTabs}/>
