@@ -27,7 +27,7 @@ export function App() {
       {access === "admin" ? (
         <AdminAccess onDataUpdate={setMenu} onAccessChange={logOutAdmin} />
       ) : (
-        <CustomersAccess menu={menu} setAccess={setAccess} />
+        <CustomersAccess menu={menu} setMenu={setMenu} setAccess={setAccess} />
       )}
     </>
   );

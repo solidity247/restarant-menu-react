@@ -1,9 +1,8 @@
-import * as React from "react";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
+import * as React from 'react';
+import {Autocomplete, FormControl} from '@mui/joy';
 import { useEffect, useState } from "preact/hooks";
 import { data } from "../assets/data";
-import { Paper } from "@mui/material";
+
 
   // what is an idea:
   // this component should generate a string and insert it in function setSearchParam()
@@ -11,10 +10,9 @@ import { Paper } from "@mui/material";
 
 
 
-export default function SearchMenu({ menu, setSearchParam }) {
+export default function SearchMenu({ setMenu, setSearchParam }) {
 
   const [autocompleteVal, setAutocompleteVal] = useState("");
-  const [inputVal, setInputVal] = useState("");
 
   function filterByTitle(value) {
     const copyMenu = [...data];
@@ -23,41 +21,34 @@ export default function SearchMenu({ menu, setSearchParam }) {
         item.title.toLowerCase().includes(value.toLowerCase())
       );
       setMenu(filteredMenu);
-    } else {
-      // setMenu(data)
+    }else{
+      setMenu(data)
     }
   }
 
   useEffect(() => {
     filterByTitle(autocompleteVal);
   }, [autocompleteVal]);
-  // setSearcParam
-  useEffect(() => {
-    filterByTitle(inputVal);
-  }, [inputVal]);
+
+  
 
   return (
-    <Paper>
+    <FormControl>
       <Autocomplete
-        onSelect={(event) => {
-          console.log(event.target.value);
+        onChange = {(event, value)=> {
+          if(value){
+            setAutocompleteVal(value.title)
+          }else{
+            setAutocompleteVal("")
+          }
         }}
+        placeholder="search..."
         options={data}
         getOptionLabel={(option) => option.title}
-        renderInput={(params) => (
-          <TextField
-            onChange={(event) => {
-              setSearchParam(event.target.value);
-            }}
-            {...params}
-            label="Search"
-          />
-        )}
+        sx={{ width: 300 }}
       />
-    </Paper>
+      
+    </FormControl>
   );
 }
 
-// export default SearchMenu
-
-// sx={{ width: 300 }}  // AutoComplete
