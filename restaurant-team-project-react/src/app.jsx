@@ -1,34 +1,52 @@
 import { useEffect, useState } from "preact/hooks";
 import "./app.css";
 import { data } from "./assets/data.js";
-import AdminAccess from "./Components/AdminAccess";
+import AdminAccess from "./Components/AdminAccesComponents/AdminAccess";
 import CustomersAccess from "./Components/CustomersAccess";
 
 export function App() {
   const [menu, setMenu] = useState([...data]);
-  const [access, setAccess] = useState("customer");
-  // console.log(data);
-  const [test, setTest] = useState("");
-  console.log(test);
+  const [access, setAccess] = useState("admin");
+
+  // const [test, setTest] = useState("");
+
+  // useEffect(() => {
+  //   const restarauntData = async () => {
+  //     const restData = await fetch("data.json");
+  //     const data = await restData.json();
+  //     setTest(data);
+  //   };
+  //   restarauntData();
+  // }, []);
+
+  // useEffect(()=>{console.log("data updated")}, [menu])
+
   function logOutAdmin() {
     setAccess("customer");
   }
-
-  useEffect(() => {
-    const restarauntData = async () => {
-      const restData = await fetch("data.json");
-      const data = await restData.json();
-      setTest(data);
-    };
-    restarauntData();
-  }, []);
+  function onFormSubmit(formData) {
+    if (!formData.dataIndex >= 0) {
+      // menu[formData.dataIndex] = formData.collectedInfo;
+      setMenu((prev) => {
+        return (prev[formData.dataIndex] = formData.collectedInfo);
+      });
+    } else {
+      setMenu((prev) => [...prev, formData.collectedInfo]);
+    }
+    debugger
+    // console.log(formData);
+    // // setMenu(prev=>{
+    //   return []
+    // })
+  }
 
   return (
     <>
       {access === "admin" && (
         <AdminAccess
-          onDataUpdate={setMenu}
+          menu={menu}
           onAccessChange={logOutAdmin}
+          onFormSubmit={onFormSubmit}
         ></AdminAccess>
       )}
       {access === "customer" && (

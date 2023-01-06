@@ -12,7 +12,8 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.3",
-    "preact": "^10.11.3"
+    "preact": "^10.11.3",
+    "react-contenteditable": "^3.3.6"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
