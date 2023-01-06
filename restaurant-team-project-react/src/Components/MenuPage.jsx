@@ -1,4 +1,3 @@
-import { useState } from "preact/hooks";
 import SearchMenu from "./SearchMenu";
 import CardItem from "./CardItem";
 import "./MenuPage.css"

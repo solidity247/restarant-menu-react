@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import LoginForm from "./Access/LoginForm";
 import Header from "./Header";
 import HomePage from "./HomePage";
@@ -38,7 +38,7 @@ export default function CustomersAccess({ menu, setMenu, setAccess}) {
       {activeTab === 0 && <HomePage/>}
       {activeTab === 1 && <MenuPage menu = {menu} setMenu={setMenu} cartItems={cartItems}/>}
       {activeTab === 2 && <VisitPage/>}
-      {activeTab === 3 && <CartPage cartItems={cartItems}/>}
+      {activeTab === 3 && <CartPage cartItems={cartItems} setCartItems={setCartItems}/>}
       
       <br />
       And much more from customer's site

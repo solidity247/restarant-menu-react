@@ -1,7 +1,8 @@
 import * as React from 'react';
-import {Autocomplete, FormControl} from '@mui/joy';
 import { useEffect, useState } from "preact/hooks";
 import { data } from "../assets/data";
+import { TextField, Autocomplete } from '@mui/material';
+import "./SearchMenu.css"
 
 
   // what is an idea:
@@ -33,22 +34,25 @@ export default function SearchMenu({ setMenu, setSearchParam }) {
   
 
   return (
-    <FormControl>
+    <>
       <Autocomplete
-        onChange = {(event, value)=> {
-          if(value){
-            setAutocompleteVal(value.title)
-          }else{
-            setAutocompleteVal("")
-          }
-        }}
-        placeholder="search..."
-        options={data}
-        getOptionLabel={(option) => option.title}
-        sx={{ width: 300 }}
-      />
-      
-    </FormControl>
+      onChange = {(event, value)=> {
+        if(value){
+          setAutocompleteVal(value.title)
+        }else{
+          setAutocompleteVal("")
+        }
+      }}
+      disablePortal
+      id="combo-box-demo"
+      options={data}
+      getOptionLabel={(option) => option.title}
+      sx={{ width: 300 }}
+      renderInput={(params) => <TextField {...params} label="search..." />}
+      className ="autocomplete-input-menupage"
+    />
+  
+    </>
   );
 }
 

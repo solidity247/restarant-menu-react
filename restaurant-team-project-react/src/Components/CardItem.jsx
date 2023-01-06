@@ -10,7 +10,12 @@ export default function CardItem({ menu, productDetails, cartItems, index }) {
   const { id, title, category, price, img, desc } = productDetails;
 
   function onClickHandler(i) {
-    cartItems.push(menu[i])
+    if(cartItems.indexOf(menu[i]) === -1){
+      menu[i].inCart = 1
+      cartItems.push(menu[i]) 
+    }else{
+      menu[i].inCart +=1
+    }
   }
 
   return (
@@ -34,8 +39,8 @@ export default function CardItem({ menu, productDetails, cartItems, index }) {
             {desc}
           </Typography>
           <Typography
-            className="card-item-description"
-            variant="body2"
+            className="card-item-name"
+            variant="h6"
             color="text.secondary"
           >
             ${price}
