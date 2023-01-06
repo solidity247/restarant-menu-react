@@ -10,7 +10,7 @@ import CartPage from "./CartPage";
 
 
 
-export default function CustomersAccess({ menu, setMenu, setAccess}) {
+export default function CustomersAccess({ menu, setAccess}) {
   // TODOS:
   // const [login, setLogin] = useState()
   // props.onAccessChange;
@@ -41,14 +41,14 @@ export default function CustomersAccess({ menu, setMenu, setAccess}) {
     }
 
   ]
-  console.log(cartItems)
+  // console.log(cartItems)
 
 
   return (
     <div className="customer-page-container">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} headerTabs={headerTabs}/>
       {activeTab === 0 && <HomePage/>}
-      {activeTab === 1 && <MenuPage menu = {menu} setMenu={setMenu} cartItems={cartItems}/>}
+      {activeTab === 1 && <MenuPage menu = {menu} cartItems={cartItems}/>}
       {activeTab === 2 && <VisitPage/>}
       {activeTab === 3 && <CartPage cartItems={cartItems}/>}
       

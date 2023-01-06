@@ -1,14 +1,25 @@
+import { useState } from "preact/hooks";
 import SearchMenu from "./SearchMenu";
 import CardItem from "./CardItem";
 import "./MenuPage.css"
 
-function MenuPage({ menu, setMenu, cartItems}) {
+function filterMenu(menuArray, searchWord){
+  return menuArray.filter(item=>item.title.toLowerCase().includes(searchWord.toLowerCase()))
+
+}
+
+function MenuPage({ menu, cartItems}) {
+
+  const [searchParam, setSearchParam] = useState("")
+
+  const menuToRender = filterMenu(menu, searchParam)
+
   return (
     <div className="menu-page"> 
       
-      <SearchMenu menu = {menu} setMenu={setMenu}/>
+      <SearchMenu menu = {menu} setSearchParam={setSearchParam} />
       <div>
-        {menu.map((productDetails, index) => (
+        {menuToRender.map((productDetails, index) => (
           <CardItem menu={menu} productDetails={productDetails} index={index} key={productDetails.id}  cartItems={cartItems} />
         ))}
       </div>
