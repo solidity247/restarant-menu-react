@@ -46,13 +46,13 @@ function CartPage({cartItems, setCartItems}) {
               </Typography>
             </CardContent>
             <CardActions className='cart-btn-wrapper'>
-     
-                <Button className = "quantity-btns-cartpage" onClick = {()=>updateItemQuantity(index, 1)}>+</Button>
-                <h4 className='quantity-num-cartpage'>{ele.inCart}</h4>
-                <Button className = "quantity-btns-cartpage" onClick={()=> updateItemQuantity(index, -1)}>-</Button>
-             
+                <div className='quantity-btns-wrapper'>
+                <button className = "quantity-btns-cartpage" onClick = {()=>updateItemQuantity(index, 1)}>+</button>
+                <h4 className = 'quantity-num-cartpage' >{ele.inCart}</h4>
+                <button className = "quantity-btns-cartpage" onClick={()=> updateItemQuantity(index, -1)}>-</button>
+                </div>
+                <button className = "remove-btn-cartpage" onClick={()=>removeCartItem(index)}>Remove</button>
             </CardActions>
-                <Button className = "remove-btn-cartpage" onClick={()=>removeCartItem(index)}>Remove</Button>
           </Card>
 
             )
