@@ -8,41 +8,29 @@ import "./CustomersAccess.css"
 import CartPage from "./CartPage";
 
 
-
+const headerTabs = [
+  {
+    label : "HOME",
+    id: 1
+  },
+  {
+    label : "MENU",
+    id: 2
+  },
+  {
+    label : "VISIT US",
+    id: 3
+  },
+  {
+    label: "Cart",
+    id: 4
+  }
+]
 
 export default function CustomersAccess({ menu, setMenu, setAccess}) {
-  // TODOS:
-  // const [login, setLogin] = useState()
-  // props.onAccessChange;
-  // navbar (sidebar)|| header
-  // conditional component for home 
-  // conditional component menu 
-  // conditional component about us (visit us)
-  // component Cart
-  // footer  
+
   const [cartItems, setCartItems] = useState([])
   const [activeTab, setActiveTab] = useState(0)
-  const headerTabs = [
-    {
-      label : "HOME",
-      id: 1
-    },
-    {
-      label : "MENU",
-      id: 2
-    },
-    {
-      label : "VISIT US",
-      id: 3
-    },
-    {
-      label: "Cart",
-      id: 4
-    }
-
-  ]
-  console.log(cartItems)
-
 
   return (
     <div className="customer-page-container">

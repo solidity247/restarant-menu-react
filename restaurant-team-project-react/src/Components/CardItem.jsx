@@ -33,6 +33,13 @@ export default function CardItem({ menu, productDetails, cartItems, index }) {
           >
             {desc}
           </Typography>
+          <Typography
+            className="card-item-description"
+            variant="body2"
+            color="text.secondary"
+          >
+            ${price}
+          </Typography>
         </CardContent>
         <CardActions>
           <Button onClick={()=>onClickHandler(index)} size="small">

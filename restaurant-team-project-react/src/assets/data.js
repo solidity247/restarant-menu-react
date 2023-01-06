@@ -9,7 +9,7 @@ export const data = [
   },
   {
     id: 2,
-    title: "diner double",
+    title: "Diner double",
     category: "lunch",
     price: 13.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-2.jpeg?raw=true",

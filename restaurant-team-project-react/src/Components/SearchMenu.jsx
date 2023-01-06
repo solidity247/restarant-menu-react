@@ -1,52 +1,54 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import { useEffect, useState } from 'preact/hooks';
-import { data } from '../assets/data';
-import { Paper } from '@mui/material';
+import {Autocomplete, FormControl} from '@mui/joy';
+import { useEffect, useState } from "preact/hooks";
+import { data } from "../assets/data";
 
-function SearchMenu({menu, setMenu}) {
-  const [autocompleteVal, setAutocompleteVal] = useState("")
-  const [inputVal, setInputVal] = useState("")
-  
-  function filterByTitle(value){
-    const copyMenu = [...data]
-    if(value){
-      const filteredMenu = copyMenu.filter(item=>item.title.toLowerCase().includes(value.toLowerCase()))
-      setMenu(filteredMenu)
+
+  // what is an idea:
+  // this component should generate a string and insert it in function setSearchParam()
+  // setSearchParam - is a reference to filter rerender. Once you call it, menu wil rerendered in accordance with your string
+
+
+
+export default function SearchMenu({ setMenu, setSearchParam }) {
+
+  const [autocompleteVal, setAutocompleteVal] = useState("");
+
+  function filterByTitle(value) {
+    const copyMenu = [...data];
+    if (value) {
+      const filteredMenu = copyMenu.filter((item) =>
+        item.title.toLowerCase().includes(value.toLowerCase())
+      );
+      setMenu(filteredMenu);
     }else{
       setMenu(data)
     }
   }
 
-  useEffect(()=>{
-    filterByTitle(autocompleteVal)
-  },[autocompleteVal])
+  useEffect(() => {
+    filterByTitle(autocompleteVal);
+  }, [autocompleteVal]);
+
   
-  useEffect(()=>{
-    filterByTitle(inputVal)
-  },[inputVal])
 
   return (
-    <Paper 
-      >
+    <FormControl>
       <Autocomplete
-        onSelect={(event) => {
-          console.log(event.target.value)
-          setAutocompleteVal(event.target.value);
+        onChange = {(event, value)=> {
+          if(value){
+            setAutocompleteVal(value.title)
+          }else{
+            setAutocompleteVal("")
+          }
         }}
-        id="combo-box-demo"
+        placeholder="search..."
         options={data}
-        getOptionLabel={option => option.title}
+        getOptionLabel={(option) => option.title}
         sx={{ width: 300 }}
-        renderInput={(params) => <TextField 
-          onChange={(event) => {
-            setInputVal(event.target.value);
-          }}
-          {...params} label="Search" />}
       />
-    </Paper>
-  )
+      
+    </FormControl>
+  );
 }
 
-export default SearchMenu
