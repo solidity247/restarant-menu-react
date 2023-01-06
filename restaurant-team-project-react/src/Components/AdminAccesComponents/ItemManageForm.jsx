@@ -1,7 +1,12 @@
 import React from "react";
 import "./ItemManageForm.css";
 
-export default function ItemManageForm({ itemDetails, setIsForm, onFormSubmit, dataIndex }) {
+export default function ItemManageForm({
+  itemDetails,
+  setIsForm,
+  onFormSubmit,
+  dataIndex,
+}) {
   function onSubmitHandler(event) {
     event.preventDefault();
     const collectedInfo = {
@@ -12,16 +17,15 @@ export default function ItemManageForm({ itemDetails, setIsForm, onFormSubmit, d
       img: event.target.img.value,
       desc: event.target.desc.value,
     };
-    onFormSubmit({collectedInfo, dataIndex});
-    setIsForm(false)
-}
-
-function cancelHandler(){
-      setIsForm(false)
+    onFormSubmit({ collectedInfo, dataIndex });
+    setIsForm(false);
   }
 
+  function cancelHandler() {
+    setIsForm(false);
+  }
 
-  const formHeader = itemDetails? "Edit item" : "Add item"
+  const formHeader = itemDetails ? "Edit item" : "Add item";
 
   return (
     <div className="item-manage-container">
@@ -32,7 +36,7 @@ function cancelHandler(){
           style={{ backgroundImage: `url(${itemDetails.img})` }}
         ></div>
         <label id="id"> ID </label>
-        <input type="text" id="id" value={itemDetails.id || ""} />
+        <input type="number" id="id" value={itemDetails.id || ""} />
         <label id="title"> Name </label>
         <input type="text" id="title" value={itemDetails.title || ""} />
         <label id="category"> Category </label>
@@ -49,7 +53,9 @@ function cancelHandler(){
           value={itemDetails.price || ""}
         />
         <input type="submit" />
-        <button type="button" onClick={cancelHandler}>Cancel</button>
+        <button type="button" onClick={cancelHandler}>
+          Cancel
+        </button>
       </form>
     </div>
   );

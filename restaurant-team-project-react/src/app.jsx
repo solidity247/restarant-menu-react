@@ -24,16 +24,32 @@ export function App() {
   function logOutAdmin() {
     setAccess("customer");
   }
-  function onFormSubmit(formData) {
-    if (!formData.dataIndex >= 0) {
-      // menu[formData.dataIndex] = formData.collectedInfo;
-      setMenu((prev) => {
-        return (prev[formData.dataIndex] = formData.collectedInfo);
-      });
+
+  const findInMenu = () => {};
+
+  function onFormSubmit({ collectedInfo }) {
+    const isItemInMenu = menu.find(({ id }) => id === Number(collectedInfo.id));
+    console.log("ww", collectedInfo);
+
+    if (isItemInMenu) {
+      console.log(444);
+      setMenu((prev) => (prev[collectedInfo.id] = collectedInfo));
+      // debugger;
     } else {
-      setMenu((prev) => [...prev, formData.collectedInfo]);
+      setMenu((prev) => [...prev, collectedInfo]);
     }
-    debugger
+
+    console.log(menu);
+    // if (formData.dataIndex >= 0) {
+    //   // menu[formData.dataIndex] = formData.collectedInfo;
+    //   setMenu((prev) => {
+    //     return (prev[formData.dataIndex] = collectedInfo);
+    //   });
+    // } else {
+    //   setMenu((prev) => [...prev, collectedInfo]);
+    // }
+    // debugger
+
     // console.log(formData);
     // // setMenu(prev=>{
     //   return []
