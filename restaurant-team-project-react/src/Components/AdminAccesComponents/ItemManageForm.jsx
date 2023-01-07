@@ -1,16 +1,13 @@
 import React from "react";
+import { useMenuDispatch } from "../MenuContext";
 import "./ItemManageForm.css";
 
-export default function ItemManageForm({
-  itemDetails,
-  setIsForm,
-  onFormSubmit,
-  dataIndex,
-}) {
+export default function ItemManageForm({ itemDetails, setIsForm, dataIndex }) {
+  const dispatch = useMenuDispatch();
   function onSubmitHandler(event) {
     event.preventDefault();
     const collectedInfo = {
-      id: event.target.id.value,
+      id: Number(event.target.id.value),
       title: event.target.title.value,
       category: event.target.category.value,
       price: event.target.price.value,
@@ -20,6 +17,13 @@ export default function ItemManageForm({
     onFormSubmit({ collectedInfo, dataIndex });
     setIsForm(false);
   }
+
+  const onFormSubmit = (menuItem) => {
+    dispatch({
+      type: "submit",
+      payload: menuItem,
+    });
+  };
 
   function cancelHandler() {
     setIsForm(false);
@@ -31,6 +35,7 @@ export default function ItemManageForm({
     <div className="item-manage-container">
       <form className="item-manage-form" onSubmit={onSubmitHandler}>
         <h2>{formHeader}</h2>
+
         <div
           className="form-picture"
           style={{ backgroundImage: `url(${itemDetails.img})` }}

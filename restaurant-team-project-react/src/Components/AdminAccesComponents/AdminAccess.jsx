@@ -1,10 +1,12 @@
+import { useContext } from "preact/hooks";
 import { useState } from "react";
+import { useMenu } from "../MenuContext";
 import AdminInterface from "./AdminInterface";
 import AdminItemCard from "./AdminItemCard";
 import AdminItemContainer from "./AdminItemContainer";
 
-export default function AdminAccess({ menu, onAccessChange, onFormSubmit }) {
-  console.log("Adm acc called");
+export default function AdminAccess({ onAccessChange, onFormSubmit }) {
+  const menu = useMenu();
 
   return (
     <div>
