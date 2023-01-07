@@ -1,4 +1,4 @@
-export const data = [
+export let data = [
   {
     id: 1,
     title: "Buttermilk pancakes",
@@ -6,7 +6,7 @@ export const data = [
     price: 15.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-1.jpeg?raw=true",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const data = [
     price: 13.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-2.jpeg?raw=true",
     desc: `Vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const data = [
     price: 6.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-3.jpeg?raw=true",
     desc: `Kombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const data = [
     price: 20.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-4.jpeg?raw=true",
     desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const data = [
     price: 22.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-5.jpeg?raw=true",
     desc: `Franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const data = [
     price: 18.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-6.jpeg?raw=true",
     desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ export const data = [
     price: 12.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-8.jpeg?raw=true",
     desc: `On it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 9,
@@ -77,7 +77,7 @@ export const data = [
     price: 16.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-9.jpeg?raw=true",
     desc: `Skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
-    inCart: 0
+    inCart: 0,
   },
   {
     id: 10,
@@ -86,6 +86,6 @@ export const data = [
     price: 22.99,
     img: "https://github.com/solidity247/restarant-menu-react/blob/master/restaurant-team-project-react/src/assets/images/item-10.jpeg?raw=true",
     desc: `Skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
-    inCart: 0
+    inCart: 0,
   },
-]
+];
