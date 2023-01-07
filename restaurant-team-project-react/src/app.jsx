@@ -28,15 +28,20 @@ export function App() {
   // function onFormSubmit receives an object of 2 properties: information
   // from <ItemManageForm>:  collectedInfo = {id, name, category etc}, dataIndex. If dataIndex -1 we add new item, if positive, updatinx existing data element
   function onFormSubmit({ collectedInfo, dataIndex }) {
+    let tempData = [...data]
     if (dataIndex < 0) {
       console.log("adding new element to data", collectedInfo);
-    } else {
+      tempData[tempData.length] = collectedInfo;
+      setMenu(tempData);
+      // data = tempData
 
-      let tempData = [...data]
+    } else {
       tempData[dataIndex] = collectedInfo;
       console.log("updating existant element", dataIndex, collectedInfo);
       setMenu(tempData);
+      // data = [...tempData]
     }
+
   }
 
   return (

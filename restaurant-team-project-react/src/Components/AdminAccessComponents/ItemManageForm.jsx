@@ -2,6 +2,9 @@ import React from "react";
 import "./ItemManageForm.css";
 
 export default function ItemManageForm({ itemDetails, setIsForm, onFormSubmit, dataIndex }) {
+  const defaultFormitemPicture = "https://i.pinimg.com/564x/94/ee/2f/94ee2fda4931c26b3c55ed23d28e885e.jpg";
+  itemDetails = itemDetails || {};
+  dataIndex = dataIndex || -1;
   function onSubmitHandler(event) {
     event.preventDefault();
     const collectedInfo = {
@@ -29,7 +32,7 @@ function cancelHandler(){
         <h2>{formHeader}</h2>
         <div
           className="form-picture"
-          style={{ backgroundImage: `url(${itemDetails.img})` }}
+          style={{ backgroundImage: `url(${itemDetails.img || defaultFormitemPicture})`, backgroundPosition: 'center' }}
         ></div>
         <label id="id"> ID </label>
         <input type="text" id="id" value={itemDetails.id || ""} />
