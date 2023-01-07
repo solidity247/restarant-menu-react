@@ -1,5 +1,5 @@
 import React from "react";
-import { useMenuDispatch } from "../MenuContext";
+import { DISPATCH_EVENTS, useMenuDispatch } from "../MenuContext";
 import "./ItemManageForm.css";
 
 export default function ItemManageForm({ itemDetails, setIsForm, dataIndex }) {
@@ -20,7 +20,7 @@ export default function ItemManageForm({ itemDetails, setIsForm, dataIndex }) {
 
   const onFormSubmit = (menuItem) => {
     dispatch({
-      type: "submit",
+      type: DISPATCH_EVENTS.SUBMIT,
       payload: menuItem,
     });
   };
