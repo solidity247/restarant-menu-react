@@ -14,6 +14,11 @@ function CartPage({cartItems, setCartItems}) {
         copyItems.splice( i , 1 )
         setCartItems(copyItems)
     }
+
+    function clearCartItems(){
+      setCartItems([])
+    }
+
     return (
         <div>
         {cartItems.map((ele, index)=> {
@@ -58,6 +63,7 @@ function CartPage({cartItems, setCartItems}) {
             )
             })}
         <h2>Subtotal: ${result.toFixed(2)}</h2>
+        <button onClick={clearCartItems}>Delete All</button>
         </div>
   )
 }

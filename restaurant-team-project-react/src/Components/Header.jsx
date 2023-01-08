@@ -9,7 +9,7 @@ function Header({ headerTabs,activeTab, setActiveTab, numberOfOrders}) {
         <div className='header'>
           {headerTabs.map((btn,index)=><button className={activeTab === index && "active"} onClick={()=> setActiveTab(index)}>
             {(btn.label !== "Cart")? btn.label : <LocalMallOutlinedIcon/>}
-          {index === 3 && numberOfOrders}  </button>)}
+          {index === 3 && numberOfOrders>0? numberOfOrders : ""}  </button>)}
         </div>
     </div>
   )
