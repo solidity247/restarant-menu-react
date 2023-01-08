@@ -1,7 +1,7 @@
 import AdminItemCard from './AdminItemCard';
 import AddNewItem from './AddNewItem';
 
-export default function AdminAccess({menu, onAccessChange, onFormSubmit}) {
+export default function AdminAccess({menu, onAccessChange, onFormSubmit, deleteElementFromData}) {
   
   
   return (
@@ -10,7 +10,7 @@ export default function AdminAccess({menu, onAccessChange, onFormSubmit}) {
       <br /> */}
       {/* <AdminInterface></AdminInterface> */}
       <AddNewItem onFormSubmit={onFormSubmit} />
-      {menu.map((item, index)=><AdminItemCard onFormSubmit={onFormSubmit} dataIndex={index} itemDetails={item}></AdminItemCard> )}
+      {menu.map((item, index)=><AdminItemCard onFormSubmit={onFormSubmit} dataIndex={index} itemDetails={item} deleteElementFromData={deleteElementFromData} ></AdminItemCard> )}
       <button onClick={onAccessChange}>Log out</button>
     </div>
   );

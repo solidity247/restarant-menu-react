@@ -4,10 +4,17 @@ import './AdminItemCard.css'
 
 export default function AdminItemCard(props) {
 
-  const {itemDetails, dataIndex, onFormSubmit } = props
+  const {itemDetails, dataIndex, onFormSubmit, deleteElementFromData} = props
+
+  // console.log(dataIndex)
 
   function editButtonHandler(){
     setIsForm(true)
+  }
+
+  function deleteItemHandler(){
+    // console.log(event)
+    deleteElementFromData(dataIndex)
   }
 
   const [isForm, setIsForm] = useState(false)
@@ -26,8 +33,7 @@ export default function AdminItemCard(props) {
       <div className="aic-img-url admin-item-line-element" > {itemDetails.img}</div>
       <div className="aic-price admin-item-line-element" > ${itemDetails.price}</div>
       <button onClick={editButtonHandler}>Edit</button>
-      <button>Save</button>
-      <button>Delete</button>
+      <button onClick={deleteItemHandler}>Delete</button>
 
 
 
@@ -35,3 +41,4 @@ export default function AdminItemCard(props) {
     </div>
   );
 }
+

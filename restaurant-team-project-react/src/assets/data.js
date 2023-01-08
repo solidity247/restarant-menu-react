@@ -1,3 +1,6 @@
+export function udpadeData(newData){
+  data = newData;
+}
 export let data = [
   {
     id: 1,
