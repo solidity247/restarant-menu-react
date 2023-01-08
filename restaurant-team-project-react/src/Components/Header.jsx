@@ -3,13 +3,13 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import "./Header.css"
 
 
-function Header({ headerTabs,activeTab, setActiveTab}) {
+function Header({ headerTabs,activeTab, setActiveTab, numberOfOrders}) {
   return (
-    <div>
+    <div className='header-main'>
         <div className='header'>
           {headerTabs.map((btn,index)=><button className={activeTab === index && "active"} onClick={()=> setActiveTab(index)}>
             {(btn.label !== "Cart")? btn.label : <LocalMallOutlinedIcon/>}
-            </button>)}
+          {index === 3 && numberOfOrders}  </button>)}
         </div>
     </div>
   )

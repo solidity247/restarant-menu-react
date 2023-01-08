@@ -7,7 +7,7 @@ import "./MenuPage.css"
 
 // }
 
-function MenuPage({ menu, setMenu, cartItems}) {
+function MenuPage({ menu, setMenu, setCartItems}) {
 
   // const [searchParam, setSearchParam] = useState("")
 
@@ -24,7 +24,7 @@ function MenuPage({ menu, setMenu, cartItems}) {
           productDetails={productDetails} 
           index={index} 
           key={productDetails.id}  
-          cartItems={cartItems} />
+          setCartItems={setCartItems} />
         ))}
       </div>
     </div>

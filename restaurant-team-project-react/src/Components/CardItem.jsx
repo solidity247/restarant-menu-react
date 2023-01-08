@@ -8,17 +8,19 @@ import Typography from "@mui/material/Typography";
 import "./CardItem.css";
 import ItemModalWindow from "./ItemModalWindow";
 
-export default function CardItem({ menu, productDetails, cartItems, index }) {
+export default function CardItem({ menu, productDetails, setCartItems, index }) {
   const { id, title, category, price, img, desc } = productDetails;
   const [isModalItem, setIsModalItem] = useState(false);
 
   function onClickHandler(i) {
-    if(cartItems.indexOf(menu[i]) === -1){
-      menu[i].inCart = 1
-      cartItems.push(menu[i]) 
-    }else{
-      menu[i].inCart +=1
-    }
+    setCartItems((prev)=>{
+      if(prev.indexOf(menu[i]) === -1){
+        menu[i].inCart = 1;
+      }else{
+        menu[i].inCart +=1;
+      }  
+      return menu.filter(item=>item.inCart)
+    })
   }
 
   function modalCardCall(event){
