@@ -40,15 +40,16 @@ export default function CustomersAccess({ menu, setMenu, setAccess}) {
   },[])
   useEffect(()=>{
     localStorage.setItem("cart", JSON.stringify(cartItems))
-    const calculatedOrders = cartItems.reduce((acc, item)=> acc+item.inCart, 0)
-    setNumberOfOrders(calculatedOrders);
+    // const calculatedOrders = cartItems.reduce((acc, item)=> acc+item.inCart, 0)
+    // setNumberOfOrders(calculatedOrders);
     console.log(cartItems)
   },[cartItems])
+
   return (
     <div className="customer-page-container">
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} headerTabs={headerTabs} numberOfOrders={numberOfOrders}/>
+      <Header activeTab={activeTab} cartItems={cartItems} setActiveTab={setActiveTab} headerTabs={headerTabs} numberOfOrders={numberOfOrders}/>
       {activeTab === 0 && <HomePage/>}
-      {activeTab === 1 && <MenuPage menu = {menu} setMenu={setMenu} setCartItems={setCartItems}/>}
+      {activeTab === 1 && <MenuPage menu = {menu} setMenu={setMenu} cartItems= {cartItems} setCartItems={setCartItems}/>}
       {activeTab === 2 && <VisitPage/>}
       {activeTab === 3 && <CartPage cartItems={cartItems} setCartItems={setCartItems}/>}
       
