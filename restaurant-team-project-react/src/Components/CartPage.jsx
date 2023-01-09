@@ -16,7 +16,7 @@ function CartPage({cartItems, setCartItems}) {
     }
 
     const removeAllCartItems = ()=>{
-      setCartItems([])
+        setCartItems([])
   }
 
     return (
@@ -63,7 +63,7 @@ function CartPage({cartItems, setCartItems}) {
             )
             })}
         <h2>Subtotal: ${result.toFixed(2)}</h2>
-        <button onClick={removeAllCartItems}>Delete All</button>
+        <button onClick={()=>removeAllCartItems()}>Delete All</button>
         </div>
   )
 }

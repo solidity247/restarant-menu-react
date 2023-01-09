@@ -1,29 +1,26 @@
 import SearchMenu from "./SearchMenu";
 import CardItem from "./CardItem";
 import "./MenuPage.css"
+import CategoryBtns from "./CategoryBtns";
 
-// function filterMenu(menuArray, searchWord){
-//   return menuArray.filter(item=>item.title.toLowerCase().includes(searchWord.toLowerCase()))
-
-// }
-
-function MenuPage({ menu, setMenu, setCartItems}) {
-
-  // const [searchParam, setSearchParam] = useState("")
-
-  // const menuToRender = filterMenu(menu, searchParam)
-
+function MenuPage({ menu, setMenu, cartItems, setCartItems}) {
   return (
     <div className="menu-page"> 
+      {/* <div className="img-wrapper-menupage">
+        <img  className="img-menu-page" src="https://tomdra.com/wp-content/uploads/2020/01/header-healthy.jpg" alt="burger" />
+
+      </div> */}
       
+      <div className="menu-body">
       <SearchMenu menu = {menu} setMenu = {setMenu}/>
-      <div>
+      <CategoryBtns setMenu = {setMenu}/>
         {menu.map((productDetails, index) => (
           <CardItem 
           menu={menu} 
           productDetails={productDetails} 
           index={index} 
           key={productDetails.id}  
+          cartItems= {cartItems}
           setCartItems={setCartItems} />
         ))}
       </div>

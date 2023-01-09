@@ -6,7 +6,7 @@ import CustomersAccess from "./Components/CustomersAccess";
 
 export function App() {
   const [menu, setMenu] = useState(data);
-  const [access, setAccess] = useState("admin");
+  const [access, setAccess] = useState("customer");
 
   // logOutAdmin function what switces state to render customers page
   function logOutAdmin() {
