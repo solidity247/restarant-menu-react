@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ItemManageForm from "./ItemManageForm";
+import "./AddNewItem.css"
 
 export default function AddNewItem({onFormSubmit}) {
   const [isForm, setIsForm] = useState(false);

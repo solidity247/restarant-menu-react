@@ -1,41 +1,72 @@
 .admin-item-card {
+    width: 97%;
+    background-color: white;
     border: 1px solid black;
-    margin: 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 1rem;
     display: flex;
+    align-items: center;
 }
 
 .admin-item-line-element{
     font-size: 1rem;
-    border: 1px dotted black;
     margin: 3px;
 }
 
+
+.admin-item-card .aic-id{
+    width: 3%;
+}
 .aic-picture {
-    width: 50px;
-    height: 50px;
+    width: 10%;
+    height: 80px;
     background-size: cover;
 }
 
-.admin-item-card .aic-id{
-    width: 40px;
-}
-
 .admin-item-card .aic-title{
-    width: 150px;
+    width: 8%;
 }
 
 .admin-item-card .aic-category{
-    width: 100px;
+    width: 8%;
 }
 .admin-item-card .aic-description{
     /* min-width: 100px; */
-    width: 350px;
+    width:25%;
 }
 .admin-item-card .aic-img-url{
     /* min-width: 100px; */
-    width: 300px;
+    width: 30%;
     
 }
 .admin-item-card .aic-price{
-    width: 65px;
+    width: 5%;
+}
+
+.admin-item-card button {
+    width:8% ;
+    margin:5px;
+    padding: 15px 20px;
+    border:none;
+    border-radius: 5px;
+    color:white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+.admin-item-card button:hover{
+    background-color: white;
+    color:black;
+    border: 1px solid black;
+    transition: 1s;
+
+}
+
+.admin-btn-edit{
+    background-color: rgb(39, 110, 87);
+    
+}
+.admin-btn-delete{
+    background-color: rgb(127, 25, 42);
 }
