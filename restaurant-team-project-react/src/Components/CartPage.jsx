@@ -62,8 +62,18 @@ function CartPage({cartItems, setCartItems}) {
 
             )
             })}
-        <h2>Subtotal: ${result.toFixed(2)}</h2>
-        <button onClick={()=>removeAllCartItems()}>Delete All</button>
+        {cartItems.length > 0 ? 
+        <div>
+          <h2>Subtotal: ${result.toFixed(2)}</h2>
+          <button className='btn-checkout'>Checkout</button>
+          <button className='btn-clear-all' onClick={()=>removeAllCartItems()}>Clear All</button>
+        </div>
+        :
+        <div>
+          <h2>Your Shopping Cart is empty.</h2>
+        </div>
+        }
+        
         </div>
   )
 }

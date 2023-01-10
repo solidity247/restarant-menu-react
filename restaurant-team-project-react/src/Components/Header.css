@@ -1,5 +1,6 @@
 .header-main{
     background-color: #09211c;
+
 }
 .header{
     max-width: 1200px;
@@ -20,6 +21,7 @@
 }
 .header button:hover{
     font-size: larger;
+    transition: 1s;
 }
 .header .active{
     color:orange

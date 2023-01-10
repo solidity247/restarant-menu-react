@@ -49,8 +49,10 @@ export default function CardItem({ menu, productDetails, cartItems, setCartItems
   return (
     <>
       <Card className="CardItem" onClick={modalCardCall} >
-        {isModalItem && <ItemModalWindow productDetails={productDetails} addToCartFunc={onClickHandler} index={index} setIsModalItem={setIsModalItem} />}
-        {openModalAdd && <ModalAddingItem openModalAdd={openModalAdd} setOpenModalAdd={setOpenModalAdd} />}
+        <div className="item-modal-container">
+          {isModalItem && <ItemModalWindow productDetails={productDetails} addToCartFunc={onClickHandler} index={index} setIsModalItem={setIsModalItem} />}
+        </div>
+          {openModalAdd && <ModalAddingItem openModalAdd={openModalAdd} setOpenModalAdd={setOpenModalAdd} />}
         <CardMedia image={img} title={title} className="pictire-container" />
         <CardContent>
           <Typography
