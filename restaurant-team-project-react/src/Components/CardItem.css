@@ -17,3 +17,11 @@
 .card-item-description {
   width: 500px;
 }
+#addToCartButton{
+  margin-top: 40%;
+  font-weight: 600;
+  border: 1px solid lightblue;
+  padding: 10px;
+}
+
+

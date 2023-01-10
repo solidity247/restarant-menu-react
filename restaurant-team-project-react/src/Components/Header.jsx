@@ -1,14 +1,17 @@
 import React from 'react'
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import "./Header.css"
 
-function Header({ headerTabs,activeTab, setActiveTab}) {
-  const setActiveBtn=(i)=>{
-    setActiveTab(i)
-  }
+
+function Header({headerTabs,activeTab, cartItems, setActiveTab, numberOfOrders}) {
   return (
-    <div>
+    <div className='header-main'>
         <div className='header'>
-          {headerTabs.map((btn,index)=><button className={activeTab === index && "active"} onClick={()=> setActiveBtn(index)}>{btn.label}</button>)}
+          {headerTabs.map((btn,index)=><button className={activeTab === index && "active"} onClick={()=> setActiveTab(index)}>
+            {(btn.label !== "Cart")? btn.label : <LocalMallOutlinedIcon/>}
+            {/* {index === 3 && numberOfOrders>0? numberOfOrders : ""}   */}
+            {index === 3 && cartItems.reduce((acc, item)=> acc+item.inCart, 0)}
+          </button>)}
         </div>
     </div>
   )
