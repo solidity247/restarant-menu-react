@@ -20,7 +20,12 @@ const Slideshow = () => {
             images.map((each, index) => <img key={index} style={{width: "100%"}} src={each} />)
           }
         </Zoom>
+        <button class="book-table"
+        type="button">
+    Book a table
+</button>
       </div>
+      
     )
 }
 export default Slideshow
