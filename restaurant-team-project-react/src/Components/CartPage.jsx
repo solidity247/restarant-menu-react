@@ -20,7 +20,7 @@ function CartPage({cartItems, setCartItems}) {
   }
 
     return (
-        <div>
+        <div className='cart-page-container'>
         {cartItems.map((ele, index)=> {
             result = result + ele.price * ele.inCart
             return (
