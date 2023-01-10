@@ -1,8 +1,15 @@
 import React from 'react'
+import ContactForm from './ContactForm'
+import VisitUs from './VisitUs'
+
+
 
 function VisitPage() {
   return (
-    <div>VisitPage</div>
+    <div>
+      <VisitUs />
+      <ContactForm />
+    </div>
   )
 }
 

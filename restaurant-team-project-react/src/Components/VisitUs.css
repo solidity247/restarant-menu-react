@@ -1,0 +1,12 @@
+.visit-container{
+    width:33%;
+    font-weight: bolder;
+    font-size: x-large;
+    display: inline-block;
+    padding-top: 15px;
+}
+h4{
+    color: rgb(163, 33, 33);
+    font-style: italic;
+    padding-bottom: 25px;
+}
