@@ -5,7 +5,10 @@
     top: 0px;
     left: 0px;
     background-color: rgba(52, 72, 52, 0.512);
-    display: flex;
+    display: flex; 
     justify-content: center;
-    align-items: center;
+    align-items:center;
+}
+#addToCartButton{
+    margin: auto;
 }

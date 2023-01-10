@@ -44,3 +44,27 @@
     background-color:aliceblue;
 
 }
+.btn-checkout{
+    width: 55%;
+    margin-bottom: 5px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(221, 181, 69);
+    color:black;
+    font-size: large;
+    font-weight: 500;
+    border: 1px none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.btn-clear-all{
+    width: 55%;
+    padding: 0.5rem 1rem;
+    background-color: pink;
+    color:red;
+    font-size: large;
+    font-weight: 500;
+    border: 1px none;
+    border-radius: 5px;
+    cursor: pointer;
+}
