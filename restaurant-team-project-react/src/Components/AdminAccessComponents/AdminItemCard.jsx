@@ -32,8 +32,8 @@ export default function AdminItemCard(props) {
       <div className="aic-description admin-item-line-element" > {itemDetails.desc}</div>
       <div className="aic-img-url admin-item-line-element" > {itemDetails.img}</div>
       <div className="aic-price admin-item-line-element" > ${itemDetails.price}</div>
-      <button onClick={editButtonHandler}>Edit</button>
-      <button onClick={deleteItemHandler}>Delete</button>
+      <button className = "admin-btn-edit" onClick={editButtonHandler}>Edit</button>
+      <button className = "admin-btn-delete" onClick={deleteItemHandler}>Delete</button>
 
 
 

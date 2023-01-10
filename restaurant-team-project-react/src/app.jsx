@@ -9,6 +9,7 @@ import ContactForm from "./Components/ContactForm";
 export function App() {
   const [menu, setMenu] = useState(data);
   const [access, setAccess] = useState("customer");
+  const [ darkMode, setDarkMode] = useState(false)
 
   // logOutAdmin function what switces state to render customers page
   function logOutAdmin() {
@@ -62,17 +63,19 @@ export function App() {
   }
 
   return (
-    <>
+    <div className={darkMode && "app-container"}>
       {access === "admin" ? (
         <AdminAccess
           menu={menu}
           onAccessChange={logOutAdmin}
           onFormSubmit={onFormSubmit}
           deleteElementFromData={deleteElementFromData}
+          darkMode={darkMode}
+          setDarkMode ={setDarkMode}
         />
       ) : (
         <CustomersAccess menu={menu} setMenu={setMenu} setAccess={setAccess} />
       )}
-    </>
+    </div>
   );
 }
