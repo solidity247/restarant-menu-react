@@ -3,6 +3,8 @@ import "./app.css";
 import { data, udpadeData } from "./assets/data.js";
 import AdminAccess from "./Components/AdminAccessComponents/AdminAccess";
 import CustomersAccess from "./Components/CustomersAccess";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import ContactForm from "./Components/ContactForm";
 
 export function App() {
   const [menu, setMenu] = useState(data);
@@ -49,6 +51,14 @@ export function App() {
     tempData.splice(index, 1);
     setMenu(tempData);
     udpadeData(tempData);
+  }
+
+  function App() {
+    return (
+      <div className="App">
+        <ContactForm />
+      </div>
+    )
   }
 
   return (
