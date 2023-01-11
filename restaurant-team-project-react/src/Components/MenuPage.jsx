@@ -17,6 +17,7 @@ function MenuPage({ menu, setMenu, cartItems, setCartItems}) {
         {menu.map((productDetails, index) => (
           <CardItem 
           menu={menu} 
+          setMenu = {setMenu}
           productDetails={productDetails} 
           index={index} 
           key={productDetails.id}  
