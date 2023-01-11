@@ -9,7 +9,7 @@ import ItemModalWindow from "./ItemModalWindow";
 import ModalAddingItem from "./ModalAddingItem"
 import "./CardItem.css";
 
-export default function CardItem({ menu, productDetails, cartItems, setCartItems, index }) {
+export default function CardItem({ menu, setMenu, productDetails, cartItems, setCartItems, index }) {
   const { id, title, category, price, img, desc } = productDetails;
   const [isModalItem, setIsModalItem] = useState(false);
   const [openModalAdd, setOpenModalAdd] = useState(false);
@@ -38,6 +38,7 @@ export default function CardItem({ menu, productDetails, cartItems, setCartItems
     }else{
       // here we re not setting or updating cartItems thats a reason of bug 
       menu[i].inCart +=1
+      setMenu([...menu])
     }
   }
 
