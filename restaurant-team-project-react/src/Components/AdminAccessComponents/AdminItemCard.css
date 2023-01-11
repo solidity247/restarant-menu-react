@@ -23,6 +23,10 @@
     height: 80px;
     background-size: cover;
 }
+.aic-picture img{
+    width: 100%;
+    height: 100%;
+}
 
 .admin-item-card .aic-title{
     width: 8%;

@@ -91,4 +91,22 @@ export let data = [
     desc: `Skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     inCart: 0,
   },
+  {
+    id: 11,
+    title: "Spicy Grilled Shrimp",
+    category: "dinner",
+    price: 25.99,
+    img: "https://images7.alphacoders.com/423/thumb-1920-423566.jpg",
+    desc: `This epic chicken Parmesan is one for the books! Use chicken tenders instead of chicken breasts for the perfect portion sizes, and bake over a bed of tomato-coated angel hair with ooey gooey cheese on top.`,
+    inCart: 0,
+  },
+  {
+    id: 12,
+    title: "Pistachio Crusted Rack of Lamb",
+    category: "dinner",
+    price: 25.99,
+    img: "https://www.usfoods.com/great-food/food-trends/on-the-lamb/_jcr_content/pageImage.img.jpg/1528389293051.jpg",
+    desc: `Lamb is intimidating and pricey, but if you want to impress someone with a fancier meal, this rack of lamb recipe will definitely please the crowd.`,
+    inCart: 0,
+  },
 ];
