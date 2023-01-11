@@ -2,9 +2,7 @@ import { useEffect, useState } from "preact/hooks";
 import "./app.css";
 import { data, udpadeData } from "./assets/data.js";
 import AdminAccess from "./Components/AdminAccessComponents/AdminAccess";
-import CustomersAccess from "./Components/CustomersAccess";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import ContactForm from "./Components/ContactForm";
+import CustomersAccess from "./Components/CustomersAccess"
 
 
 
@@ -54,14 +52,6 @@ export function App() {
     tempData.splice(index, 1);
     setMenu(tempData);
     udpadeData(tempData);
-  }
-
-  function App() {
-    return (
-      <div className="App">
-        <ContactForm />
-      </div>
-    )
   }
   
 
