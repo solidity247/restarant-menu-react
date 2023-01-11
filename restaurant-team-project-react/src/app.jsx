@@ -2,8 +2,10 @@ import { useEffect, useState } from "preact/hooks";
 import "./app.css";
 import { data, udpadeData } from "./assets/data.js";
 import AdminAccess from "./Components/AdminAccessComponents/AdminAccess";
+import CustomersAccess from "./Components/CustomersAccess"
 import CustomersAccess from "./Components/CustomersAccess";
 import LoadingGif from "./Components/LoadingGif";
+
 
 
 
@@ -44,6 +46,7 @@ export function App() {
     setMenu(tempData);
     udpadeData(tempData);
   }
+
 
   return (
     <div className={darkMode && "app-container"}>
