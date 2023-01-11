@@ -1,0 +1,27 @@
+.visit-container{
+    font-weight: bolder;
+    font-size: x-large;
+    display: inline-block;
+    padding: 15px;
+    background-color: rgb(63, 90, 63);
+    width: 50%;
+    opacity: 0.9;
+}
+h4{
+    color: white;
+    font-style:normal;
+    padding-bottom: 25px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.main{
+    color: lightgoldenrodyellow;
+    font-style: normal;
+    padding-bottom: 25px;
+}
+
+.visit-page{
+    background-image: url("https://media.istockphoto.com/id/953140058/photo/cooking-nd-seasoning-spices-border-on-black-slate-background.jpg?b=1&s=170667a&w=0&k=20&c=8Vmnl8mHhMmc2WvnEEj0RDajvg75bizccWzrTXIh2z8=");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
