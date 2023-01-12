@@ -6,6 +6,7 @@ import MenuPage from "./MenuPage";
 import VisitPage from "./VisitPage";
 import "./CustomersAccess.css";
 import CartPage from "./CartPage";
+import Footer from "./Footer";
 
 const headerTabs = [
   {
@@ -65,11 +66,12 @@ export default function CustomersAccess({ menu, setMenu, setAccess }) {
       {activeTab === 3 && (
         <CartPage cartItems={cartItems} setCartItems={setCartItems} />
       )}
-      <br />
-      And much more from customer's site
-      <br />
-      //Footer
-      <LoginForm onAuthorisation={setAccess}></LoginForm>
+      <div className="footer-main">
+        <div className="footer">
+          <LoginForm onAuthorisation={setAccess}></LoginForm>
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
