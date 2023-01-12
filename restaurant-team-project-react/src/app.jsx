@@ -15,8 +15,8 @@ export function App() {
   const [loading,setLoading] = useState(false)
 
   useEffect(()=>{
-    setLoading(true)
-    setTimeout(()=>setLoading(false), 1000) 
+    setTimeout(()=>setLoading(true),10)
+    setTimeout(()=>setLoading(false),1000) 
   },[access])
 
 

@@ -27,11 +27,13 @@ export default function ItemModalWindow({
     <div
       id="item-modal-window"
       className="item-modal-window"
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
       onClick={closeModalWindow}
     >
-      <Card sx={{ maxWidth: 400 }}>
+      <Card sx={{ maxWidth: 400, maxHeight:600 }}>
         <CardActionArea>
-          <CardMedia component="img" height="300" image={img} alt={title} />
+          <CardMedia component="img" image={img} alt={title} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {title}
@@ -48,7 +50,7 @@ export default function ItemModalWindow({
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button id="addToCartButton" onClick={addToCardFunction} size="small">
+          <Button id="addToCartButton-modal" onClick={addToCardFunction} size="small">
             Add To Card
           </Button>
         </CardActions>
