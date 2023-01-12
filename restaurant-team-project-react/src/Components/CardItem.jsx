@@ -14,20 +14,6 @@ export default function CardItem({ menu, setMenu, productDetails, cartItems, set
   const [isModalItem, setIsModalItem] = useState(false);
   const [openModalAdd, setOpenModalAdd] = useState(false);
 
-  // NOTE: prev state was returning previous data which was deleted
-  // But we have to set cartItems in order to update the icon with total items  
-
-
-  // function onClickHandler(i) {
-  //   setCartItems(()=>{
-  //     if(cartItems.indexOf(menu[i]) === -1){
-  //       menu[i].inCart = 1;
-  //     }else{
-  //       menu[i].inCart +=1;
-  //     }  
-  //     return menu.filter(item=>item.inCart)
-  //   })    
-  // }
 
   function onClickHandler(i) {
     setOpenModalAdd(true)
@@ -36,9 +22,8 @@ export default function CardItem({ menu, setMenu, productDetails, cartItems, set
       menu[i].inCart = 1
       setCartItems([...cartItems, menu[i]]) 
     }else{
-      // here we re not setting or updating cartItems thats a reason of bug 
       menu[i].inCart +=1
-      setMenu([...menu])
+      setCartItems([...cartItems])
     }
   }
 

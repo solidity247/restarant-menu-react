@@ -1,9 +1,16 @@
-import React from 'react'
+import {useState} from 'react'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from "@mui/material";
 import "./CartPage.css"
+import CheckoutModal from './CheckoutModal';
+import { useEffect } from 'preact/hooks';
 
 function CartPage({cartItems, setCartItems}) {
-    let result = 0
+  const [openCheckout, setOpenCheckout] = useState(false);
+  const [ result, setResult] = useState(0)
+    let result1 = 0
+    useEffect(()=>{
+      setResult(result1)
+    },[cartItems])
     const updateItemQuantity = (i, num)=>{
         (num === 1 ) ? (cartItems[i].inCart +=1) :( (cartItems[i].inCart > 1) ? cartItems[i].inCart -= 1 : null)
         const copyState = [...cartItems]
@@ -17,12 +24,19 @@ function CartPage({cartItems, setCartItems}) {
 
     const removeAllCartItems = ()=>{
         setCartItems([])
-  }
+    }
+
+    const handleCheckoutBtn = (event) =>{
+      event.preventDefault()
+      setCartItems([])
+      setOpenCheckout(false)
+    }
 
     return (
         <div className='cart-page-container'>
+        {openCheckout && <CheckoutModal openCheckout={openCheckout} setOpenCheckout={setOpenCheckout} result={result} handleCheckoutBtn={handleCheckoutBtn}/>}
         {cartItems.map((ele, index)=> {
-            result = result + ele.price * ele.inCart
+            result1 += ele.price * ele.inCart
             return (
             <Card className="CardItem">
             <CardMedia image={ele.img} title={ele.title} className="pictire-container" />
@@ -65,7 +79,7 @@ function CartPage({cartItems, setCartItems}) {
         {cartItems.length > 0 ? 
         <div>
           <h2>Subtotal: ${result.toFixed(2)}</h2>
-          <button className='btn-checkout'>Checkout</button>
+          <button className='btn-checkout' onClick = {()=> setOpenCheckout(true)}>Checkout</button>
           <button className='btn-clear-all' onClick={()=>removeAllCartItems()}>Clear All</button>
         </div>
         :
