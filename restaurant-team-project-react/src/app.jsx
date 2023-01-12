@@ -10,7 +10,7 @@ import LoadingGif from "./Components/LoadingGif";
 
 export function App() {
   const [menu, setMenu] = useState(data);
-  const [access, setAccess] = useState("customer");
+  const [access, setAccess] = useState("admin");
   const [darkMode, setDarkMode] = useState(false);
   const [loading,setLoading] = useState(false)
 
