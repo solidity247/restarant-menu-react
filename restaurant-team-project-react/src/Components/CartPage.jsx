@@ -7,6 +7,7 @@ import { useEffect } from 'preact/hooks';
 function CartPage({cartItems, setCartItems}) {
   const [openCheckout, setOpenCheckout] = useState(false);
   const [ result, setResult] = useState(0)
+  const [ placed, setPlaced] = useState(false)
     let result1 = 0
     useEffect(()=>{
       setResult(result1)
@@ -30,6 +31,8 @@ function CartPage({cartItems, setCartItems}) {
       event.preventDefault()
       setCartItems([])
       setOpenCheckout(false)
+      setPlaced(true)
+      setTimeout(()=>setPlaced(false),3000)
     }
 
     return (
@@ -83,8 +86,9 @@ function CartPage({cartItems, setCartItems}) {
           <button className='btn-clear-all' onClick={()=>removeAllCartItems()}>Clear All</button>
         </div>
         :
-        <div>
-          <h2>Your Shopping Cart is empty.</h2>
+        <div className='empty-or-placed'>
+          <h2>{placed ? "Thank you for Your Order." : "Your Shopping Cart is empty."}</h2>
+          {placed && <img src="https://media3.giphy.com/media/RKTClKCkdSJHk5hK1W/source.gif" alt="" />}
         </div>
         }
         
