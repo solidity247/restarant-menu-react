@@ -1,4 +1,5 @@
 import { useState } from "preact/hooks";
+import "./LoginForm.css"
 
 export default function LoginComponent(props) {
   const [isTypingForm, setIsTyping] = useState(false);
@@ -35,13 +36,14 @@ export default function LoginComponent(props) {
         <button onClick={() => setIsTyping(true)}> Login as admin </button>
       )}
       {isTypingForm && (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} id="login-form-container">
           <label>Login</label>
-          <input type="text" name="login" value={inputValues.typedLogin} />
-          <label>Password</label>
+            
+          <input type="text" name="login"  placeholder="add your username" value={inputValues.typedLogin} />
           <input
             type="password"
             name="password"
+            placeholder="add your password"
             value={inputValues.typedPassword}
           />
           <input type="submit" />
