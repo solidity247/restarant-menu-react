@@ -8,7 +8,6 @@ export default function AdminAccess({menu, onAccessChange, onFormSubmit, deleteE
   
   return (
     <div className='admin-page-container'>
-      <img src="https://i0.wp.com/chieffoodofficers.com/wp-content/uploads/2017/10/cooking-header.jpg?fit=2000%2C500&ssl=1" alt="admin-header" />
       <div className={darkMode? "dark-mode-admin-page" : "admin-page-body"}>
         <div className='btns-wrapper'> 
           <h3>Welcome, Admin</h3>
