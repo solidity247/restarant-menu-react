@@ -24,9 +24,7 @@ const style = {
     p: 4,
   };
 
-export default function ReserveModal({
-    openR, setOpenR
-}) {
+export default function ReserveModal({ openR, setOpenR, handleModalResBtn}) {
 
   return (
     <div>
@@ -77,12 +75,17 @@ export default function ReserveModal({
             shrink: true,
           }}
         />
-
+        <br />
+        <br />
+        <TextField type="number" placeholder='Full Name'/>
+        <br />
+        <br />
+        <TextField type="number" placeholder='Phone Number'/>
         <br />
         <br />
 
     <Stack direction="row" spacing={2}>
-      <Button variant="contained" endIcon={<SendIcon />} onClick={() => setOpenR(false)}>
+      <Button variant="contained" endIcon={<SendIcon />} onClick={()=>handleModalResBtn()}>
         Let's go
       </Button>
     </Stack>
