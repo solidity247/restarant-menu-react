@@ -56,8 +56,8 @@ function cancelHandler(){
           value={itemDetails.price || ""}
           required
         />
-        <input type="submit" />
-        <button type="button" onClick={cancelHandler}>Cancel</button>
+        <input className = "submit-btn-modal" type="submit" />
+        <button id= "cancel-btn-modal" type="button" onClick={cancelHandler}>Cancel</button>
       </form>
     </div>
   );

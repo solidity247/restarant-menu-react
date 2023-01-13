@@ -1,6 +1,6 @@
 .item-manage-container{
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: rgba(82, 85, 86, 0.509);
     color: red;
@@ -13,12 +13,16 @@
 
 
 .item-manage-form{
-    padding: 10px;
-    width: 60%;
+    padding: 30px;
+    width: 40%;
     height: 60%;
     background-color: whitesmoke;
     color: black;
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 
 }
 
@@ -27,4 +31,21 @@
     height: 80px;
     background-size: cover;
     margin: 5px;
+}
+.submit-btn-modal, #cancel-btn-modal{
+    margin:3px;
+    padding: 5px;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: 400;
+}
+.submit-btn-modal{
+    background-color: green;
+    color: white;
+}
+#cancel-btn-modal{
+    background-color: pink;
+    color:red
 }
