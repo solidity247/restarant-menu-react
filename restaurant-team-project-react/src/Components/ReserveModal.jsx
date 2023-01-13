@@ -77,18 +77,18 @@ export default function ReserveModal({ openR, setOpenR, handleModalResBtn}) {
         />
         <br />
         <br />
-        <TextField type="number" placeholder='Full Name'/>
+        <TextField type="text" placeholder='Full Name'/>
         <br />
         <br />
         <TextField type="number" placeholder='Phone Number'/>
         <br />
         <br />
 
-    <Stack direction="row" spacing={2}>
-      <Button variant="contained" endIcon={<SendIcon />} onClick={()=>handleModalResBtn()}>
-        Let's go
-      </Button>
-    </Stack>
+      <Stack direction="row" spacing={2}>
+        <Button variant="contained" endIcon={<SendIcon />} onClick={()=>handleModalResBtn()}>
+          Let's go
+        </Button>
+      </Stack>
 
         </Box>
       </Modal>

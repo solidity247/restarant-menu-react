@@ -63,7 +63,7 @@ export default function CheckoutModal({openCheckout, setOpenCheckout, result, ha
                     </Select>
 
                 </div>
-                <p className='total-payment'>Order Total: ${(result*tax + result + delivery + tips).toFixed(2)}</p>
+                <p className='total-payment'>Order Total: ${(result * tax + result + delivery + result * tips).toFixed(2)}</p>
 
             </div>
             <div className='payment-details'>
